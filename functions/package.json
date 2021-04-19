@@ -1,16 +1,17 @@
 {
-  "name": "firebase-ssr",
-  "version": "1.0.0",
-  "description": "test file for Firebase project Directory with Cloud Functions, and SASS. Might have to use webpack lets just make it work.",
-  "main": "index.js",
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack:server": "webpack serve",
-    "webpack:build": "webpack",
-    "babel": "npx babel src -d  functions/src && npx babel index.js -d  functions"
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
   },
-  "author": "Tristan Lotivio",
-  "license": "ISC",
+  "engines": {
+    "node": "12"
+  },
+  "main": "index.js",
   "dependencies": {
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.15",
@@ -31,6 +32,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
-    "webpack-cli": "^4.6.0"
-  }
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
 }
