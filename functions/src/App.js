@@ -15,7 +15,7 @@ function App(props) {
   var facts = props.facts.map(function (fact, i) {
     return /*#__PURE__*/_react["default"].createElement("li", {
       key: i
-    }, fact.text);
+    }, fact.text + "asdf");
   });
   return /*#__PURE__*/_react["default"].createElement("div", null, facts);
 }
