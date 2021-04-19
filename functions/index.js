@@ -34,7 +34,7 @@ app.get('**', function (req, res) {
     var html = (0, _server.renderToString)( /*#__PURE__*/_react["default"].createElement(_App["default"], {
       facts: facts
     }));
-    var finalHtml = index.replace('<!--APP-->');
+    var finalHtml = index.replace('<!--APP-->', html);
     res.set('Cache-Control', 'public, max-age=600, s-maxage=1200');
     res.send(finalHtml);
   });
